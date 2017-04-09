@@ -1,0 +1,802 @@
+{
+  "timestamp": "123456789",
+  "reloadTime": "5",
+  "algorithmList": [
+    {
+      "name": "AESwithHMAC",
+      "code": "AH",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.AESWithHmacSHA256Crypto",
+      "description": ""
+    },
+    {
+      "name": "LegacyAESwithHMAC",
+      "code": "RH",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.RawAESHmacCrypto",
+      "description": ""
+    },
+    {
+      "name": "LegacyPlanText",
+      "code": "LP",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.PlainText",
+      "description": ""
+    },
+    {
+      "name": "LegacyWebExEncryption",
+      "code": "LW",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.WBXEncryption",
+      "description": "This is the backward compatibility algorithm, and suitable for the DB persistant data with Webex fake encryption case"
+    },
+    {
+      "name": "LegacyWebExEncryptionWithoutVersion",
+      "code": "LV",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.WBXEncryptionWithoutVersion",
+      "description": "This is the backward compatibility algorithm, and suitable for the Webex fake encryption case"
+    },
+    {
+      "name": "LegacyAESPro",
+      "code": "LA",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.RawAESEncryptionPro",
+      "description": ""
+    },
+    {
+      "name": "HmacSHA256",
+      "code": "G1",
+      "type": "mac",
+      "className": "com.cisco.cca.algorithm.digest.DefaultHmacSHA256Digest",
+      "description": ""
+    },
+    {
+      "name": "SaultedSHA256",
+      "code": "G1",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.SHA256SaltedDigest",
+      "description": ""
+    },
+    {
+      "name": "HmacSHA256_TFS",
+      "code": "H3",
+      "type": "mac",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LimitedLengthVerfiyDigest",
+      "description": "For the TFS solution, The 'generate' logic is the same as DefaultHmacSHA256Digest. The 'verify' logic will treat the input string as part of the mac result"
+    },
+    {
+      "name": "LegacyKeyedSHA256",
+      "code": "H4",
+      "type": "mac",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyKeyedSHA256",
+      "description": "For the AS server session ticket legacy algorithm."
+    },
+    {
+      "name": "LegacyMD5FakeHMac",
+      "code": "M1",
+      "type": "mac",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyMD5FakeHMac",
+      "description": "For the some the doc show parameter, It need MD5 algorithm and then move to HMac algorithm, It can be remove after the R2 deployment."
+    },
+    {
+      "name": "LegacyKeyedMD5",
+      "code": "M2",
+      "type": "mac",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyKeyedMD5",
+      "description": "For the some the docshow parameter use MD5 + SMAC key to generate, It can be remove after the R2 deployment."
+    },
+    {
+      "name": "LegacySaltedDigest",
+      "code": "H5",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacySaltedDigest",
+      "description": "For the password salted hash."
+    },
+    {
+      "name": "LegacyMD5",
+      "code": "H6",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyMD5",
+      "description": "This is legacy MD5 algorithm, for docshow mobile usage. and smac case"
+    },
+    {
+      "name": "LegacySHA1",
+      "code": "H7",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacySHA1",
+      "description": "This is legacy SHA1 algorithm, for smac WebEx Node lockdown case"
+    },
+    {
+      "name": "LegacyHmacSHA1",
+      "code": "LS",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyHmacSHA1",
+      "description": "this is legacy HmacSHA1 algorithm, for hard code key, hmac.keydata.base64."
+    },
+    {
+      "name": "LegacyHmacSHA1WithDefaultProperty",
+      "code": "LT",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyHmacSHA1WithDefaultProperty",
+      "description": "this is legacy HmacSHA1 algorithm, for hard code key, hmac.keydata.base64 and hmac.default.key.property.base64."
+    },
+    {
+      "name": "LegacyAESFastEncryption",
+      "code": "LE",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.LegacyAESFastEncryption",
+      "description": "This is legacy AESFast algorithm, for hard code key: webex.encrypt.key.base64"
+    },
+    {
+      "name": "LegacyAESHMacCryptoWithPassedKey",
+      "code": "LH",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.LegacyAESHMacCryptoWithPassedKey",
+      "description": "This is legacy AES encryption and hmac algorithm, for hard code key: hmac.keydata.base64 and aes.constant.key.base64"
+    },
+    {
+      "name": "LegacyAESCryptoWithCbcKey4Webnode",
+      "code": "LI",
+      "type": "encryption",
+      "className": "com.cisco.cca.algorithm.crypto.legacy.LegacyAESCryptoWithCbcKey4Webnode",
+      "description": "This is legacy AES algorithm, for hard code key: aes.cbc.key.base64"
+    },
+    {
+      "name": "LegacyMD5WithDocshowPrivate",
+      "code": "D1",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyMD5WithDocshowPrivate",
+      "description": "this is legacy md5 algorithm, for hard code key, docshow.key.private.base64."
+    },
+    {
+      "name": "LegacySHAWithDocshowPrivate",
+      "code": "D2",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacySHAWithDocshowPrivate",
+      "description": "this is legacy sha algorithm, for hard code key, docshow.key.private.base64."
+    },
+    {
+      "name": "LegacyLimitedLengthSHA256",
+      "code": "D3",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyLimitedLengthSHA256",
+      "description": "this is legacy sha256 algorithm with limited length, for hard code key, docshow.key.private.base64."
+    },
+    {
+      "name": "LegacySHA2WithPadKey4TP",
+      "code": "ST",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacySHA2WithPadKey4TP",
+      "description": "this is legacy sha256 algorithm used in TP config verify case, for hard code key:padkey."
+    },
+    {
+      "name": "LegacyMD5ForRandomStringKey",
+      "code": "H8",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyMD5ForRandomStringKey",
+      "description": "This is legacy MD5 algorithm with hard code key - random.string.base64, for docshow mobile and jabber usage."
+    },
+    {
+      "name": "LegacySHAWithDocshowPrivate",
+      "code": "D2",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacySHAWithDocshowPrivate",
+      "description": "this is legacy sha algorithm, for hard code key, docshow.key.private.base64."
+    },
+    {
+      "name": "LegacyLimitedLengthSHA256",
+      "code": "D3",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyLimitedLengthSHA256",
+      "description": "this is legacy sha256 algorithm with limited length, for hard code key, docshow.key.private.base64."
+    },
+    {
+      "name": "LegacySHA2WithPadKey4TP",
+      "code": "ST",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacySHA2WithPadKey4TP",
+      "description": "this is legacy sha256 algorithm used in TP config verify case, for hard code key:padkey."
+    },
+    {
+      "name": "LegacyMD5ForRandomStringKey",
+      "code": "H8",
+      "type": "hash",
+      "className": "com.cisco.cca.algorithm.digest.legacy.LegacyMD5ForRandomStringKey",
+      "description": "This is legacy MD5 algorithm with hard code key - random.string.base64, for docshow mobile and jabber usage."
+    },
+  ],
+  "encryptionScene": [
+    {
+      "name": "SessionDefault",
+      "encryption": "AESwithHMAC",
+      "decryption": [
+        "AESwithHMAC"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": ""
+    },
+    {
+      "name": "FromAuthentication",
+      "encryption": "LegacyAESwithHMAC",
+      "decryption": [
+        "AESwithHMAC",
+        "LegacyAESwithHMAC"
+      ],
+      "compatibleKeyType": "SessionKey",
+      "forceKeyType": "",
+      "description": "The scene define for the data generate by Authentication Server. current use by AS client"
+    },
+    {
+      "name": "ToPage_TCDownloadMaterial",
+      "encryption": "AESwithHMAC",
+      "decryption": [
+        "AESwithHMAC"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define for TC download course material link. current use by TC page. the Legacy usage is for XML API, It's for compatible with expose URL from original XML API. Now it has been replace by short URL solution. "
+    },
+    {
+      "name": "FromPageToGLA",
+      "encryption": "AESwithHMAC",
+      "decryption": [
+        "AESwithHMAC"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define for the caller and callee can be the Page and GLA. current case is before mobile get session ticket, it will call page and XML to generate a encryption which include user password and timestamp."
+    },
+    {
+      "name": "ToPage_RememberMe",
+      "encryption": "AESwithHMAC",
+      "decryption": [
+        "AESwithHMAC"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing user password in custom browser cookies."
+    },
+    {
+      "name": "FromWebDB_UserPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyWebExEncryption"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing user password in WebDB.TableName:CorUser, Column:PASSWORD,the scope is: j2ee page, xml api, As server. conference service."
+    },
+    {
+      "name": "FromWebDB_MeetingPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyPlanText"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing meeting password in WebDB. TableName: MTGCONFERENCE, Column:PASSWORD TableName: WBXCALENDAR, Column: PASSWORD, the scope is: j2ee page, xml api, job manager, reminder engineer, conference service, "
+    },
+    {
+      "name": "FromWebDB_TCRecordingPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyWebExEncryption"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing recording password in WebDB.TableName:WBXSERVICERECORDING Column:ACCESSPWD TableName: WBXNBRRECORDING Column:ACCESSPASSWORD, the scope is: j2ee page, xml api, wss, conference service, "
+    },
+    {
+      "name": "FromWebDB_RecordingPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyPlanText"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing recording password in WebDB.TableName:WBXSERVICERECORDING Column:ACCESSPWD TableName: WBXNBRRECORDING Column:ACCESSPASSWORD, the scope is: j2ee page, xml api, wss, conference service, "
+    },
+    {
+      "name": "FromWebDB_ProgramPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyPlanText"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing program password in WebDB.TableName: WBXECMTGPROGRAM Column:ENROLLPASSWORD,the scope is: j2ee page, xml api."
+    },
+    {
+      "name": "FromWebDB_PanelistPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyPlanText"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing panelist password in WebDB TableName: WBXEVENTEXTINFO, Key: REFSTR3.the scope is: j2ee page, xml api."
+    },
+    {
+      "name": "FromWebDB_RegisterPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyPlanText"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing registration password in WebDB.TableName:MTGCONFERENCE Column:REGPASSWORD, the scope is: j2ee page, xml api, reminder engineer."
+    },
+    {
+      "name": "FromWebDB_DefaultMeetingPassword",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro",
+        "LegacyWebExEncryption"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing default meeting password in WebDB.TableName:WBXUSEREXTINFO Key:SESSIONPASSW ORD,the scope is: j2ee page, xml api"
+    },
+    {
+      "name": "FromWebDB_CiscoIPphone",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing meeting password in WebDB.TableName:WBXUSEREXTINFO Key:CIPIJabberPassword, the scope is: j2ee page,"
+    },
+    {
+      "name": "FromPageToRAClient_Legacy",
+      "encryption": "LegacyWebExEncryptionWithoutVersion",
+      "decryption": [
+        "LegacyWebExEncryptionWithoutVersion"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is for backward compatibility case. The scene will be disable and remove after the RA client has remove the parameter for EAID1 and EAID2."
+    },
+    {
+      "name": "FromWebDB_SmartTech",
+      "encryption": "LegacyWebExEncryptionWithoutVersion",
+      "decryption": [
+        "LegacyWebExEncryptionWithoutVersion",
+        "AESwithHMAC"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is for storing the SmartTech sensitive infomation 'SecurityKey','Phone Access Code' and 'Access Code' in WebDB. Security Key：TableName：WBXSITECONFIG Field:SecurityKey. Access Code/Phone Access Code TableName:WBXSMTITEM Field:ACCESSPWD/REFSTR3 "
+    },
+    ,
+    {
+      "name": "FromWebDB_CiscoIPphone",
+      "encryption": "LegacyAESPro",
+      "decryption": [
+        "LegacyAESPro"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define the usage of storing meeting password in WebDB.TableName:WBXUSEREXTINFO Key:CIPIJabberPassword, the scope is: j2ee page,"
+    },
+    {
+      "name": "FromPageToRAClient_Legacy",
+      "encryption": "LegacyWebExEncryptionWithoutVersion",
+      "decryption": [
+        "LegacyWebExEncryptionWithoutVersion"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is for backward compatibility case. The scene will be disable and remove after the RA client has remove the parameter for EAID1 and EAID2."
+    },
+    {
+      "name": "FromWebDB_SmartTech",
+      "encryption": "LegacyWebExEncryptionWithoutVersion",
+      "decryption": [
+        "LegacyWebExEncryptionWithoutVersion",
+        "AESwithHMAC"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is for storing the SmartTech sensitive infomation 'SecurityKey','Phone Access Code' and 'Access Code' in WebDB. Security Key：TableName：WBXSITECONFIG Field:SecurityKey. Access Code/Phone Access Code TableName:WBXSMTITEM Field:ACCESSPWD/REFSTR3 "
+    },
+    {
+      "name": "LegacyToPage_WebACDPersonalQueue",
+      "encryption": "LegacyAESFastEncryption",
+      "decryption": [
+        "LegacyAESFastEncryption"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is for backward compatibility case. The scene will be disable and remove after the WebACD would not support long personal queue link."
+    },
+    {
+      "name": "LegacyToPage_ProgramID",
+      "encryption": "LegacyAESHMacCryptoWithPassedKey",
+      "decryption": [
+        "LegacyAESHMacCryptoWithPassedKey"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for EC program long link, g.php p parameter."
+    },
+    {
+      "name": "FromPageToClient_LegacyCbcKey4Webnode",
+      "encryption": "LegacyAESCryptoWithCbcKey4Webnode",
+      "decryption": [
+        "LegacyAESCryptoWithCbcKey4Webnode"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is for backward compatibility case. The scene will be disable and remove after the Webnode is no longer support."
+    }
+  ],
+  "macScene": [
+    {
+      "name": "SessionDefault",
+      "generate": "HmacSHA256",
+      "verify": [
+        "HmacSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": ""
+    },
+    {
+      "name": "ExternalUrl",
+      "generate": "HmacSHA256",
+      "verify": [
+        "HmacSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "deprecated"
+    },
+    {
+      "name": "ToPage_MCMeetingPasswordInURL",
+      "generate": "HmacSHA256",
+      "verify": [
+        "HmacSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The Scene is used for MC PW parameter in email link. The cases are: meeting invite user mail, user register meeting mail. "
+    },
+    {
+      "name": "FromAuthentication",
+      "generate": "LegacyKeyedSHA256",
+      "verify": [
+        "HmacSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene define for the data generate by Authentication Server. current use by AS client"
+    },
+    {
+      "name": "LegacyFromAuthentication",
+      "generate": "LegacyKeyedSHA256",
+      "verify": [
+        "LegacyKeyedSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": ""
+    },
+    {
+      "name": "FromPageThroughClientMeetingInProcessToPage",
+      "generate": "HmacSHA256",
+      "verify": [
+        "HmacSHA256",
+        "LegacyMD5FakeHMac"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is that: page generate a link with MD5 parameters and send to client(BO, Hands-on-lab), then page upgrade to new release, but meeting still in process, and at this time, client send the link to new page version, and page will be compatible with old algorithm."
+    },
+    {
+      "name": "FromConfserviceToPage_TFS",
+      "generate": "HmacSHA256_TFS",
+      "verify": [
+        "HmacSHA256_TFS"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The caller is Confservice and the callee is J2EE page. The scene define for the TFS usage. The result is used in file name. So it has length limitation. All methods here need consider about the length issue."
+    },
+    {
+      "name": "FromPageToServer_SMAC",
+      "generate": "HmacSHA256",
+      "verify": [
+        "HmacSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is that: page generate a SMAC parameters with MD5+dynamicKey  and send to server, then CB will verify the SMAC with new algorithm, and page will be compatible with old algorithm."
+    },
+    {
+      "name": "FromPageToCBServer",
+      "generate": "HmacSHA256",
+      "verify": [
+        "HmacSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is that: page generate 4 parameters in docshow with SMAC key and send to server, then CB will verify the each of the parameter with new algorithm, The parameter is: SMAC, Hashofhostkey,AS/PD/presenter ticket/ W11 audio license flag and End meeting ticket. "
+    },
+    {
+      "name": "LegacyFromPageToServer_SMAC",
+      "generate": "LegacyKeyedMD5",
+      "verify": [
+        "LegacyKeyedMD5"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is compatible with old algorithm: page generated a SMAC parameters with MD5+dynamicKey  and send to server, then CB will verify the SMAC with the old algorithm, this old algorithm should be disabled after all client/server upgrade to new algorithm."
+    }
+  ],
+  "hashScene": [
+    {
+      "name": "ToPage_UserPassword",
+      "generate": "LegacySaltedDigest",
+      "verify": [
+        "LegacySaltedDigest"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": ""
+    },
+    {
+      "name": "LegacyToPage_Recording",
+      "generate": "LegacyHmacSHA1WithDefaultProperty",
+      "verify": [
+        "LegacyHmacSHA1WithDefaultProperty"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for recording long link, lsr/ldr.php rKey parameter."
+    },
+    {
+      "name": "LegacyFromPageToServer_SMAC",
+      "generate": "LegacyKeyedMD5",
+      "verify": [
+        "LegacyKeyedMD5"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is compatible with old algorithm: page generated a SMAC parameters with MD5+dynamicKey  and send to server, then CB will verify the SMAC with the old algorithm, this old algorithm should be disabled after all client/server upgrade to new algorithm."
+    }
+  ],
+  "hashScene": [
+    {
+      "name": "ToPage_UserPassword",
+      "generate": "LegacySaltedDigest",
+      "verify": [
+        "LegacySaltedDigest"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": ""
+    },
+    {
+      "name": "LegacyToPage_Recording",
+      "generate": "LegacyHmacSHA1WithDefaultProperty",
+      "verify": [
+        "LegacyHmacSHA1WithDefaultProperty"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for recording long link, lsr/ldr.php rKey parameter."
+    },
+    {
+      "name": "LegacyFromPageToWebExNodeClient_SMAC",
+      "generate": "LegacySHA1",
+      "verify": [
+        "LegacySHA1"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The caller is page and the callee is WebExNode client. The scene define for the SMAC parameter verify. and this scene will be removed when WebNode upgrade to new algorithm. From Simon He"
+    },
+    {
+      "name": "LegacytoPage_WebACD",
+      "generate": "LegacyMD5",
+      "verify": [
+        "LegacyMD5",
+        "LegacySHA1"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is resolved for WebACD long URL compatibility case. Simon provide the detail case. This scene will be removed when we decide to disable the long URL support."
+    },
+    {
+      "name": "LegacyToPage_HostKey",
+      "generate": "LegacyMD5WithDocshowPrivate",
+      "verify": [
+        "LegacyMD5WithDocshowPrivate"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for getHostKey."
+    },
+    {
+      "name": "LegacyFromPageToWebExNodeClient_SMAC",
+      "generate": "LegacySHA1",
+      "verify": [
+        "LegacySHA1"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The caller is page and the callee is WebExNode client. The scene define for the SMAC parameter verify. and this scene will be removed when WebNode upgrade to new algorithm. From Simon He"
+    },
+    {
+      "name": "LegacytoPage_WebACD",
+      "generate": "LegacyMD5",
+      "verify": [
+        "LegacyMD5",
+        "LegacySHA1"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is resolved for WebACD long URL compatibility case. Simon provide the detail case. This scene will be removed when we decide to disable the long URL support."
+    },
+    {
+      "name": "LegacyToPage_HostKey",
+      "generate": "LegacyMD5WithDocshowPrivate",
+      "verify": [
+        "LegacyMD5WithDocshowPrivate"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for getHostKey."
+    },
+    {
+      "name": "LegacyToPage_ClientKey",
+      "generate": "LegacyMD5WithClientKey",
+      "verify": [
+        "LegacyMD5WithClientKey"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for client key."
+    },
+    {
+      "name": "LegacyToPageNoEncode_ClientKey",
+      "generate": "LegacyPlainWithClientKey",
+      "verify": [
+        "LegacyPlainWithClientKey"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This is for legacy to page, for client key with out encoding."
+    },
+    {
+      "name": "LegacyToPage_NoBrowserJMFromManU4SHA2",
+      "generate": "LegacySha256ForTKValidate",
+      "verify": [
+        "LegacySha256ForTKValidate"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is used to resolve compatible case of ManU join meeting by nobrowser.php, page uses sha2 algorithm to verify TK."
+    },
+    {
+      "name": "LegacyToPage_ConnectORJabber4SHA2",
+      "generate": "LegacySha256ForTKValidate",
+      "verify": [
+        "LegacySha256ForTKValidate"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is used to resolve compatible case of old Connect/Jabber join meeting by cm.php or host meeting by nobrowser.php, page uses sha2 algorithm to verify TK2."
+    },
+    {
+      "name": "LegacyToPage_NoBrowserJMFromTP4SHA2",
+      "generate": "LegacySha256ForTKValidate",
+      "verify": [
+        "LegacySha256ForTKValidate"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is used to resolve compatible case of TP 1.0 join meeting by nobrowser.php, page uses sha2 algorithm to verify TK."
+    },
+    {
+      "name": "LegacyToPage_JMWithMK",
+      "generate": "LegacySha256ForTKValidate",
+      "verify": [
+        "LegacySha256ForTKValidate"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This scene is used to resolve compatible case for the meeting key incorrectly encrypted by db or session key, it also use sha2 algorithm. In T29.8, the meeting key has been changed to encrypted with common jar and support key rotation, these meeting key is mainly used for MC's meetinginfo.do and callme.do"
+    },
+    {
+      "name": "LegacyToPage_SC_ScriptLibrary",
+      "generate": "LegacySHA256",
+      "verify": [
+        "LegacySHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This scene is used to resolve compatible case for validate scriptTicket on old SC client, we should remove verification method when DeloreanR2 deployed on all env."
+    },
+    {
+      "name": "LegacyFromAuthentication_SK4SHA2",
+      "generate": "LegacySHA256",
+      "verify": [
+        "LegacySHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This scene is used to remove SHA2 algorithm in session ticket for Asclient, we should remove verification method when new Asclient version deployed on all env."
+    },
+    {
+      "name": "LegacyFromPage_CyclicPW4SHA2",
+      "generate": "LegacySHA512",
+      "verify": [
+        "LegacySHA512"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "This scene is used to remove SHA2 algorithm in cyclic password for connect user, we should keep this scene because of no new connect release."
+    },
+    {
+      "name": "LegacyFromMobileToPage_MtgPWD",
+      "generate": "LegacySHA256",
+      "verify": [
+        "LegacySHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": "The scene is used to resolve compatible case of mobile join or host meeting, it uses sha256 to hash the meeting password."
+    },
+    {
+      "name": "LegacyFromTPToPage_MtgPWD",
+      "generate": "LegacySHA256",
+      "verify": [
+        "LegacySHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": " The scene is used to resolve compatible case of TP 1.0 join meeting, it uses sha256 to hash the meeting password."
+    },
+    {
+      "name": "LegacyFromClientToPage_SessionNotes",
+      "generate": "LegacySHA256",
+      "verify": [
+        "LegacySHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": " The scene is used to resolve compatible case of lock down SC client session notes case, it uses sha256 to hash ticket."
+    },
+    {
+      "name": "LegacyFromPage_NBRRecording",
+      "generate": "LegacySHA256",
+      "verify": [
+        "LegacySHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": " The scene is used to resolve compatible case of nbr recording url, it uses sha256 to hash ticket."
+    },
+    {
+      "name": "FromPageToFile",
+      "generate": "SaultedSHA256",
+      "verify": [
+        "SaultedSHA256"
+      ],
+      "compatibleKeyType": "",
+      "forceKeyType": "",
+      "description": " The scene is used to store the folder or file share password in My File feature"
+    }
+  ]
+}
